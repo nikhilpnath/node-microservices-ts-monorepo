@@ -3,6 +3,7 @@ export { getPool, closePool } from "./db/pool";
 
 //Error
 export { AppError } from "./error/appError";
+export { notFoundHandler } from "./error/notFoundHandler";
 export { errorHandler } from "./error/errorHandler";
 
 //Logger - pino

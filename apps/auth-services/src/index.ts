@@ -3,7 +3,7 @@ import { config } from "dotenv";
 import { resolve } from "node:path";
 
 import {
-  AppError,
+  notFoundHandler,
   errorHandler,
   httpLogger,
   logger,
@@ -25,10 +25,8 @@ app.get("/health", (_req, res) => {
   successResponse(res, { service: "auth-service" });
 });
 
-//Error Handling
-app.use((_req, _res, next) => {
-  next(new AppError(404, "Route not found"));
-});
+
+app.use(notFoundHandler);
 
 app.use(errorHandler);
 
