@@ -10,6 +10,8 @@ import {
   successResponse,
 } from "shared";
 
+import routes from "./routes";
+
 //root and current folder env configuration
 config({ path: resolve(process.cwd(), ".env") });
 config({ path: resolve(process.cwd(), "../../.env") });
@@ -25,6 +27,8 @@ app.get("/health", (_req, res) => {
   successResponse(res, { service: "auth-service" });
 });
 
+//routes
+app.use(routes);
 
 app.use(notFoundHandler);
 

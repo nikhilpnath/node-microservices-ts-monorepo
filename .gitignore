@@ -45,3 +45,7 @@ Thumbs.db
 .cache/
 tmp/
 temp/
+
+# Codegraph
+.codegraph/
+
