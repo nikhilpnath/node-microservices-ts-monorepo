@@ -11,7 +11,7 @@ export async function register(
   try {
     const user = await authServices.register(req.body);
 
-    successResponse(res, user, 201);
+    successResponse(res, {user}, 201);
   } catch (err) {
     next(err);
   }
